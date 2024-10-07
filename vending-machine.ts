@@ -6,6 +6,11 @@ class VendingMachine {
 
   private money: number = 0;
 
+  
+  private turnOn() {
+    this.isOn = true;
+  }
+
   public buySnack() {
 
     if (!this.isOn) {
@@ -29,10 +34,6 @@ class VendingMachine {
     this.snacksQty = 50;
     this.money = 0;
     this.turnOn();
-  }
-
-  public turnOn() {
-    this.isOn = true;
   }
 
   public shootWithFoot() {
