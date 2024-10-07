@@ -7,8 +7,8 @@ class VendingMachine {
   private money: number = 0;
 
   
-  public turnOn() {
-    this.isOn = true;
+  public turnOnOff() {
+    this.isOn = !this.isOn;
   }
 
   public buySnack() {
@@ -30,13 +30,26 @@ class VendingMachine {
   }
 
   public reset() {
-    this.isOn = false;
+    if (!this.isOn) {
+        this.snacksQty = 50;
+        this.money = 0;
+        this.turnOnOff();
+        return 'Vending machine is now reset';
+    }
+
+    this.turnOnOff();
     this.snacksQty = 50;
     this.money = 0;
-    this.turnOn();
+    this.turnOnOff();
+
+    return 'Vending machine is now reset';
   }
 
   public shootWithFoot() {
+
+    if (!this.isOn) {
+      throw new Error('Vending machine is off');
+    }
 
     if(this.snacksQty < 5) {
         this.snacksQty = 0;
