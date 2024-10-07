@@ -28,6 +28,7 @@ class VendingMachine {
     this.isOn = false;
     this.snacksQty = 50;
     this.money = 0;
+    this.turnOn();
   }
 
   public turnOn() {
