@@ -7,7 +7,7 @@ class VendingMachine {
   private money: number = 0;
 
   
-  private turnOn() {
+  public turnOn() {
     this.isOn = true;
   }
 
