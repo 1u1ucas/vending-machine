@@ -69,7 +69,7 @@ class VendingMachine {
     this.money -= 20;
     }
 
-    this.isOn = false;
+    this.turnOnOff();
   }
 
 }
