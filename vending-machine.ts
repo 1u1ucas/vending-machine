@@ -1,10 +1,16 @@
 class VendingMachine {
 
-  private isOn: boolean = false;
+  private isOn: boolean ;
 
-  private snacksQty: number = 50;
+  private snacksQty: number;
 
-  private money: number = 0;
+  private money: number;
+
+  public constructor() {
+    this.isOn = false;
+    this.snacksQty = 50;
+    this.money = 0;
+  }
 
   
   public turnOnOff() {
@@ -69,3 +75,6 @@ class VendingMachine {
 }
 
 const vendingMachine = new VendingMachine();
+
+vendingMachine.turnOnOff();
+
