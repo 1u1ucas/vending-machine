@@ -36,10 +36,21 @@ class VendingMachine {
 
   public shootWithFoot() {
 
-    if(this.snacksQty < 5) {}
+    if(this.snacksQty < 5) {
+        this.snacksQty = 0;
+    } else {
     this.snacksQty-= 5;
-    this.money += 20;
+    }
+
+    if(this.money < 20) {
+        this.money = 0;
+    } else {
+    this.money -= 20;
+    }
+
     this.isOn = false;
   }
 
 }
+
+const vendingMachine = new VendingMachine();
