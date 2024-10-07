@@ -36,14 +36,8 @@ class VendingMachine {
   }
 
   public reset() {
-    if (!this.isOn) {
-        this.snacksQty = 50;
-        this.money = 0;
-        this.turnOnOff();
-        return 'Vending machine is now reset';
-    }
 
-    this.turnOnOff();
+    this.isOn = false;
     this.snacksQty = 50;
     this.money = 0;
     this.turnOnOff();
@@ -57,17 +51,19 @@ class VendingMachine {
       throw new Error('Vending machine is off');
     }
 
-    if(this.snacksQty < 5) {
-        this.snacksQty = 0;
-    } else {
-    this.snacksQty-= 5;
+    let snacksToDrop = Math.floor(Math.random() * 6);
+    if (this.snacksQty < snacksToDrop) {
+      snacksToDrop = this.snacksQty;
     }
 
-    if(this.money < 20) {
-        this.money = 0;
-    } else {
-    this.money -= 20;
+    this.snacksQty -= snacksToDrop;
+
+    let moneyToDrop = Math.floor(Math.random() * 21);
+    if (this.money < moneyToDrop) {
+        moneyToDrop = this.money;
     }
+
+    this.money -= moneyToDrop;
 
     this.turnOnOff();
   }
