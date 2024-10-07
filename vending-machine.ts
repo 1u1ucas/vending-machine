@@ -17,9 +17,6 @@ class VendingMachine {
     this.turnOnOff();
   }
 
-  
-
-
   public buySnack() {
 
     if (!this.isOn) {
@@ -78,6 +75,4 @@ class VendingMachine {
 }
 
 const vendingMachine = new VendingMachine();
-
-vendingMachine.turnOnOff();
 
