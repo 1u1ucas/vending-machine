@@ -6,16 +6,19 @@ class VendingMachine {
 
   private money: number;
 
+  private turnOnOff() {
+    this.isOn = !this.isOn;
+  }
+
   public constructor() {
     this.isOn = false;
     this.snacksQty = 50;
     this.money = 0;
+    this.turnOnOff();
   }
 
   
-  public turnOnOff() {
-    this.isOn = !this.isOn;
-  }
+
 
   public buySnack() {
 
